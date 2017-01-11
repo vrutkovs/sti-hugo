@@ -1,3 +1,10 @@
+[![Build Status](https://drone.stevem.io/api/badges/uberamd/sti-hugo/status.svg)](https://drone.stevem.io/uberamd/sti-hugo)
+
+# Docker images
+
+Images are available on Dockerhub: https://hub.docker.com/r/uberamd/hugo/
+
+
 # sti-hugo
 
 This is an source builder image for [Hugo](https://github.com/spf13/hugo) - a fast and modern static web site generator.
