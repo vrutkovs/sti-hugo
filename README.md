@@ -24,4 +24,4 @@ $ oc new-app uberamd/hugo~http://github.com/<org>/<hugo-repo>
 ```
 
 
-This is forked from `mfotjik/sti-hugo` and updated for newer versions: (https://github.com/mfojtik/sti-hugo)
+This is forked from `mfotjik/sti-hugo` and updated for newer versions: https://github.com/mfojtik/sti-hugo
