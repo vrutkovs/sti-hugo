@@ -1,33 +1,28 @@
 debug: false
 
-publish:
+pipeline:
   docker:
+    image: plugins/docker
     environment:
       - DOCKER_LAUNCH_DEBUG=false
     username: $$DOCKER_USERNAME
     password: $$DOCKER_PASSWORD
     email: $$DOCKER_EMAIL
     repo: uberamd/hugo
-    tag: v0.18.1
+    tags: 
+      - latest
+      - v0.18.1
     file: v0.18/Dockerfile
     insecure: false
   docker:
+    image: plugins/docker
     environment:
       - DOCKER_LAUNCH_DEBUG=false
     username: $$DOCKER_USERNAME
     password: $$DOCKER_PASSWORD
     email: $$DOCKER_EMAIL
     repo: uberamd/hugo
-    tag: latest
-    file: v0.18/Dockerfile
-    insecure: false
-  docker:
-    environment:
-      - DOCKER_LAUNCH_DEBUG=false
-    username: $$DOCKER_USERNAME
-    password: $$DOCKER_PASSWORD
-    email: $$DOCKER_EMAIL
-    repo: uberamd/hugo
-    tag: v0.17
+    tags: 
+      - v0.17
     file: v0.17/Dockerfile
     insecure: false
