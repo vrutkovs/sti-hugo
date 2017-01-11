@@ -1,4 +1,4 @@
-[![Build Status](https://drone.stevem.io/api/badges/uberamd/sti-hugo/status.svg)](https://drone.stevem.io/uberamd/sti-hugo)
+[![Build Status](https://drone.stevem.io/api/badges/uberamd/sti-hugo/status.svg)](https://drone.stevem.io/uberamd/sti-hugo) [![Docker Pulls](https://img.shields.io/docker/pulls/uberamd/hugo.svg)](https://hub.docker.com/r/uberamd/hugo/)
 
 # Docker images
 
