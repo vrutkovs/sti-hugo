@@ -12,7 +12,7 @@ to verify there is no typo in configuration and then run the final blog using Hu
 
 * Create new Github repository and push your Hugo site to this repo
 * Install `s2i` tool (see the link above)
-* Build: `$ s2i build https://github.com/<org>/<hugo-repo> mfojtik/hugo hugo-blog`
+* Build: `$ s2i build https://github.com/<org>/<hugo-repo> uberamd/hugo hugo-blog`
 * Run: `$ docker run hugo-blog`
 
 ## How to use it with OpenShift?
@@ -20,5 +20,8 @@ to verify there is no typo in configuration and then run the final blog using Hu
 Run:
 
 ```
-$ oc new-app mfojtik/hugo~http://github.com/<org>/<hugo-repo>
+$ oc new-app uberamd/hugo~http://github.com/<org>/<hugo-repo>
 ```
+
+
+This is forked from `mfotjik/sti-hugo` and updated for newer versions.
