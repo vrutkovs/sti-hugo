@@ -11,8 +11,7 @@ publish:
     tags: 
       - v0.18.1
       - latest
-    context: v0.18/
-    file: Dockerfile
+    file: v0.18/Dockerfile
     insecure: false
   docker:
     environment:
@@ -23,6 +22,5 @@ publish:
     repo: uberamd/hugo
     tags: 
       - v0.17
-    context: v0.17/
-    file: Dockerfile
+    file: v0.17/Dockerfile
     insecure: false
