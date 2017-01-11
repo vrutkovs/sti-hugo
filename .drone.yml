@@ -9,10 +9,11 @@ pipeline:
     password: $$DOCKER_PASSWORD
     email: $$DOCKER_EMAIL
     repo: uberamd/hugo
+    context: v0.18
     tags: 
       - latest
       - v0.18.1
-    file: v0.18/Dockerfile
+    dockerfile: Dockerfile
     insecure: false
   docker:
     image: plugins/docker
@@ -22,7 +23,8 @@ pipeline:
     password: $$DOCKER_PASSWORD
     email: $$DOCKER_EMAIL
     repo: uberamd/hugo
+    context: v0.17
     tags: 
       - v0.17
-    file: v0.17/Dockerfile
+    dockerfile: Dockerfile
     insecure: false
