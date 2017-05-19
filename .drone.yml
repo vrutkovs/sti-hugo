@@ -5,24 +5,20 @@ pipeline:
     image: plugins/docker
     environment:
       - DOCKER_LAUNCH_DEBUG=false
-    username: $$DOCKER_USERNAME
-    password: $$DOCKER_PASSWORD
-    email: $$DOCKER_EMAIL
     repo: uberamd/hugo
     tags: 
       - latest
       - v0.18.1
     dockerfile: v0.18/Dockerfile
     insecure: false
+    secrets: [ docker_username, docker_password ]
   docker:
     image: plugins/docker
     environment:
       - DOCKER_LAUNCH_DEBUG=false
-    username: $$DOCKER_USERNAME
-    password: $$DOCKER_PASSWORD
-    email: $$DOCKER_EMAIL
     repo: uberamd/hugo
     tags: 
       - v0.17
     dockerfile: v0.17/Dockerfile
     insecure: false
+    secrets: [ docker_username, docker_password ]
