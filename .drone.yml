@@ -8,6 +8,17 @@ pipeline:
     repo: uberamd/hugo
     tags: 
       - latest
+      - v0.40
+      - v0.40.3
+    dockerfile: v0.40/Dockerfile
+    insecure: false
+    secrets: [ docker_username, docker_password ]
+  docker:
+    image: plugins/docker
+    environment:
+      - DOCKER_LAUNCH_DEBUG=false
+    repo: uberamd/hugo
+    tags: 
       - v0.18.1
     dockerfile: v0.18/Dockerfile
     insecure: false
