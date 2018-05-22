@@ -18,8 +18,8 @@ RUN apk add --update wget ca-certificates git openssl mercurial binutils && \
     mkdir -p /go/bin && \
     wget https://github.com/gohugoio/hugo/releases/download/v0.40.3/hugo_0.40.3_Linux-64bit.tar.gz && \
     tar xvzf hugo_0.40.3_Linux-64bit.tar.gz && \
-    cp hugo_0.40.3_Linux-64bit/hugo /go/bin/hugo && \
-    rm -rf hugo_0.40.3_Linux-64bit.tar.gz hugo_0.40.3_Linux-64bit && \
+    cp hugo /go/bin/hugo && \
+    rm -rf hugo_0.40.3_Linux-64bit.tar.gz hugo LICENSE README.md && \
     strip /go/bin/hugo && \
     apk del git mercurial binutils  && \
     rm -rf /go/src /go/pkg
