@@ -16,10 +16,10 @@ WORKDIR /opt/app-root/src
 ENV VERSION 0.55.6
 
 RUN dnf install --refresh -y git-core && \
-    mkdir -p /go/bin /tmp/hugo && \
+    mkdir -p /tmp/hugo && \
     curl -sL https://github.com/gohugoio/hugo/releases/download/v${VERSION}/hugo_extended_${VERSION}_Linux-64bit.tar.gz | \
       tar xvzf - -C /tmp/hugo && \
-    cp /tmp/hugo/hugo /go/bin/hugo && \
+    cp /tmp/hugo/hugo /usr/local/bin/hugo && \
     rm -rf /tmp/hugo && \
     dnf clean all
 
