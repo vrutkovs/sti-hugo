@@ -11,8 +11,7 @@ trap "rm -f $pipe" EXIT
 while true; do read line <$pipe && echo $line; done &
 
 # Start hugo server
-hugo server --baseURL=${HUGO_BASE_URL:-http://mifo.sk} \
-  --theme ${HUGO_THEME:-slim} \
+hugo server \
   --bind=0.0.0.0 \
   --port=8080 \
   --disableLiveReload=true \
