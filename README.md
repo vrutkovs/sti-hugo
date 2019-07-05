@@ -25,7 +25,7 @@ to verify there is no typo in configuration and then run the final blog using Hu
 Run:
 
 ```
-$ oc new-app quay.io/vrutkovs/sti-hugo/hugo~http://github.com/<org>/<hugo-repo>
+$ oc new-app quay.io/vrutkovs/sti-hugo~http://github.com/<org>/<hugo-repo>
 ```
 
 
