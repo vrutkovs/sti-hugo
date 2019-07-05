@@ -13,13 +13,15 @@ RUN mkdir -p /opt/app-root/src/static && \
 
 WORKDIR /opt/app-root/src
 
+ENV VERSION 0.55.6
+
 RUN apk add --update wget ca-certificates git openssl mercurial binutils && \
     update-ca-certificates && \
     mkdir -p /go/bin && \
-    wget https://github.com/gohugoio/hugo/releases/download/v0.55.6/hugo_0.55.6_Linux-64bit.tar.gz && \
-    tar xvzf hugo_0.55.6_Linux-64bit.tar.gz && \
+    wget https://github.com/gohugoio/hugo/releases/download/v${VERSION}/hugo_extended_${VERSION}_Linux-64bit.tar.gz && \
+    tar xvzf hugo_extended_${VERSION}_Linux-64bit.tar.gz && \
     cp hugo /go/bin/hugo && \
-    rm -rf hugo_0.55.6_Linux-64bit.tar.gz hugo LICENSE README.md && \
+    rm -rf hugo_extended_${VERSION}_Linux-64bit.tar.gz hugo LICENSE README.md && \
     strip /go/bin/hugo && \
     apk del git mercurial binutils  && \
     rm -rf /go/src /go/pkg
