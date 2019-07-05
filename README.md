@@ -1,13 +1,11 @@
-[![Build Status](https://drone.stevem.io/api/badges/uberamd/sti-hugo/status.svg)](https://drone.stevem.io/uberamd/sti-hugo) [![Docker Pulls](https://img.shields.io/docker/pulls/uberamd/hugo.svg)](https://hub.docker.com/r/uberamd/hugo/)
-
 # Docker images
 
-Images are available on Dockerhub: https://hub.docker.com/r/uberamd/hugo/
+Images are available on Quay: https://quay.io/repository/vrutkovs/sti-hugo
 
 
 # sti-hugo
 
-This is an source builder image for [Hugo](https://github.com/spf13/hugo) - a fast and modern static web site generator.
+This is an source builder image for [Hugo](https://github.com/gohugoio/hugo) - a fast and modern static web site generator.
 
 ## What is "source builder"?
 
@@ -19,7 +17,7 @@ to verify there is no typo in configuration and then run the final blog using Hu
 
 * Create new Github repository and push your Hugo site to this repo
 * Install `s2i` tool (see the link above)
-* Build: `$ s2i build https://github.com/<org>/<hugo-repo> uberamd/hugo hugo-blog`
+* Build: `$ s2i build https://github.com/<org>/<hugo-repo> quay.io/vrutkovs/sti-hugo hugo-blog`
 * Run: `$ docker run hugo-blog`
 
 ## How to use it with OpenShift?
@@ -27,8 +25,8 @@ to verify there is no typo in configuration and then run the final blog using Hu
 Run:
 
 ```
-$ oc new-app uberamd/hugo~http://github.com/<org>/<hugo-repo>
+$ oc new-app quay.io/vrutkovs/sti-hugo/hugo~http://github.com/<org>/<hugo-repo>
 ```
 
 
-This is forked from `mfotjik/sti-hugo` and updated for newer versions: https://github.com/mfojtik/sti-hugo
+This is forked from `uberamd/sti-hugo` and updated for newer versions: https://github.com/mfojtik/sti-hugo
