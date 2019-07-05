@@ -1,4 +1,4 @@
-FROM golang:alpine
+FROM registry.fedoraproject.org/fedora:30
 
 MAINTAINER Vadim Rutkovsky <vadim@vrutkovs.eu>
 
@@ -15,16 +15,13 @@ WORKDIR /opt/app-root/src
 
 ENV VERSION 0.55.6
 
-RUN apk add --update wget ca-certificates git openssl mercurial binutils && \
-    update-ca-certificates && \
-    mkdir -p /go/bin && \
-    wget https://github.com/gohugoio/hugo/releases/download/v${VERSION}/hugo_extended_${VERSION}_Linux-64bit.tar.gz && \
-    tar xvzf hugo_extended_${VERSION}_Linux-64bit.tar.gz && \
-    cp hugo /go/bin/hugo && \
-    rm -rf hugo_extended_${VERSION}_Linux-64bit.tar.gz hugo LICENSE README.md && \
-    strip /go/bin/hugo && \
-    apk del git mercurial binutils  && \
-    rm -rf /go/src /go/pkg
+RUN dnf install --refresh -y git-core && \
+    mkdir -p /go/bin /tmp/hugo && \
+    curl -sL https://github.com/gohugoio/hugo/releases/download/v${VERSION}/hugo_extended_${VERSION}_Linux-64bit.tar.gz | \
+      tar xvzf - -C /tmp/hugo && \
+    cp /tmp/hugo/hugo /go/bin/hugo && \
+    rm -rf /tmp/hugo && \
+    dnf clean all
 
 COPY ./s2i/* /usr/libexec/s2i/
 USER 1001
