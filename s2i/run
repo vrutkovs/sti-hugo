@@ -11,7 +11,7 @@ trap "rm -f $pipe" EXIT
 while true; do read line <$pipe && echo $line; done &
 
 # Start hugo server
-hugo server \
+hugo --config ./config.toml server \
   --bind=0.0.0.0 \
   --port=8080 \
   --disableLiveReload=true \
