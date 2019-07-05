@@ -1,5 +1,7 @@
 #!/bin/sh
 
+test ! -z $HUGO_BASEURL || { echo "Set HUGO_BASEURL"; exit 1; }
+
 pipe=/tmp/log
 hugo_pid=""
 
@@ -12,12 +14,14 @@ while true; do read line <$pipe && echo $line; done &
 
 # Start hugo server
 hugo --config ./config.toml server \
+  --baseURL="${HUGO_BASEURL}" \
   --bind=0.0.0.0 \
   --port=8080 \
   --disableLiveReload=true \
   --watch=false \
   --appendPort=false \
   --verboseLog \
-  --logFile=$pipe &
+  --logFile=$pipe \
+  ${HUGO_CMDLINE:-} &
 trap "kill $!" EXIT
 wait $hugo_pid
