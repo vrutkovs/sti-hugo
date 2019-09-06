@@ -3,5 +3,5 @@
 echo "-> Copying sources ..."
 cp -Rf /tmp/src/. ./
 
-# Check if hugo can compile your site
-hugo --config ./config.toml --renderToMemory -v && rm -rf public
+# Compile the site
+hugo --config ./config.toml -v
