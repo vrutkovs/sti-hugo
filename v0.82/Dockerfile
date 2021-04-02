@@ -15,7 +15,7 @@ WORKDIR /opt/app-root/src
 
 ENV VERSION 0.82.0
 
-RUN dnf install --refresh -y git-core && \
+RUN dnf install --refresh -y git-core golang --setopt=install_weak_deps=False && \
     mkdir -p /tmp/hugo && \
     curl -sL https://github.com/gohugoio/hugo/releases/download/v${VERSION}/hugo_extended_${VERSION}_Linux-64bit.tar.gz | \
       tar xvzf - -C /tmp/hugo && \
