@@ -3,5 +3,8 @@
 echo "-> Copying sources ..."
 cp -Rf /tmp/src/. ./
 
+mkdir /tmp/cache
+export GOCACHE=/tmp/cache
+
 # Compile the site
 hugo --config ./config.toml -v
